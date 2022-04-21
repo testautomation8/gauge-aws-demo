@@ -13,7 +13,7 @@ public class DriverFactory {
 
         String platform = System.getenv("PLATFORM");
 
-        if (platform == "AWS_CHROME") {
+        if (platform.toUpperCase().equals("AWS_CHROME")) {
             ChromeOptions chromeOptions = new ChromeOptions();
             chromeOptions.addArguments("--no-sandbox");
             chromeOptions.addArguments("--disable-dev-shm-usage");
