@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo installing gauge
+      - apt-get install -y curl zip
+      - curl -SsL https://downloads.gauge.org/stable | sh
+  build:
+    commands:
+      - echo Displaying Java version....
+      - java --version
+      - echo Displaying Maven Version....
+      - mvn --version
+      - echo Displaying Gauge Version....
+      - gauge --version
+      - echo Starting test execution....
+      - mvn test
+  post_build:
+    commands:
+      - aws s3 cp ./reports s3://cloud-test-automation-kit/gauge-ct-demo/ --recursive
