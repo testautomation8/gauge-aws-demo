@@ -30,7 +30,6 @@ public class DriverFactory {
             System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver");
             driver = new ChromeDriver();
         }
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         return driver;
     }
 }
