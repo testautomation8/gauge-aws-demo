@@ -3,6 +3,8 @@ package StepImplementation;
 import Utils.Driver;
 import com.thoughtworks.gauge.Step;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static Utils.Driver.webDriver;
 
